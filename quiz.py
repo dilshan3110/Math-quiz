@@ -141,10 +141,12 @@ while rounds_played < num_rounds:
     else:
         feedback = "You are WRONG"
 
+
     # print infinite mode
     if mode == "infinite":
         print(feedback, f"Answer was {answer}")
         num_rounds += 1
+
 
     # print question answer after problem is solved and shows if answer is correct or incorrect.
     quiz_history = f"Question {rounds_played + 1}: {feedback}. Answer is {answer}"
@@ -157,15 +159,22 @@ if rounds_played > 0:
     print("\nResults")
     print()
     if mode == "infinite":
-        num_rounds -= 1
+           num_rounds -= 1
     print(f"You got {correct_count}/{num_rounds} correct 🎊")
     print()
 
-    if mode == "regular":
-        see_results = string_checker("Do you want to see quiz results / answers?")
-        if see_results == "yes":
-            for something in game_history:
-                print(something)
+if mode == "regular":
+    see_results = string_checker("Do you want to see quiz results / answers?")
+    if see_results == "yes":
+        for something in game_history:
+            print(something)
+
+if mode == "infinite":
+    see_results = string_checker("Do you want to see quiz results / answers?")
+    if see_results == "yes":
+        for something in game_history:
+            print(something)
+
 
 else: # print message if you exit code without answering questions
-    print("\nYou did not answer any questions and quit")
+    print("\n🐔🐔🐔 Damn.. you chickened out 🐔🐔🐔")
